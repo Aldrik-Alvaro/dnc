@@ -1,12 +1,9 @@
 import requests
-import json
-import pandas as pd
-from datetime import datetime
 
 
 class apiTraffic:
     def __init__(self):
-        self.google_api_key = 'google_api_key'
+        self.google_api_key = 'google_api_key-twmUKvY5bYGDEg'
 
     def get_traffic_data(self, origem, destino):
         url = f'https://maps.googleapis.com/maps/api/directions/json?origin={origem}&destination={destino}&key={self.google_api_key}'

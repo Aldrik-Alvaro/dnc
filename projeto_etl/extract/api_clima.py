@@ -1,7 +1,4 @@
 import requests
-import json
-import pandas as pd
-from datetime import datetime
 
 class apiWeather:
     def __init__(self):

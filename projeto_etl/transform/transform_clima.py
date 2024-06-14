@@ -1,15 +1,12 @@
-import requests
-import json
 import pandas as pd
 from datetime import datetime
-
+from projeto_etl.utils import util
 
 class transformWeather:
     def __init__(self):
-        print("Iniciando limpeza clima")
+        self.cleaned_data = []
 
     def clean_weather_data(self, weather_data_list):
-        cleaned_data = []
         for raw_data in weather_data_list:
             if raw_data:
                 data = {
@@ -31,6 +28,6 @@ class transformWeather:
                     'sunset': datetime.utcfromtimestamp(raw_data['sys']['sunset']).strftime('%Y-%m-%d %H:%M:%S'),
                     'country': raw_data['sys']['country']
                 }
-                cleaned_data.append(data)
-
-        return pd.DataFrame(cleaned_data)
+                data['hashId'] = util.create_hashid(f"{raw_data['name']}_{raw_data['sys']['country']}_{datetime.utcfromtimestamp(raw_data['dt']).strftime('%Y-%m-%d %H:%M:%S')}")
+                self.cleaned_data.append(data)
+        return pd.DataFrame(self.cleaned_data)

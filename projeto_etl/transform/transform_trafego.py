@@ -1,15 +1,12 @@
-import requests
-import json
 import pandas as pd
 from datetime import datetime
-
+from projeto_etl.utils import util
 
 class transformTraffic:
     def __init__(self):
-        print("Iniciando limpeza trafego")
+        self.cleaned_data = []
 
     def clean_traffic_data(self, traffic_data_list):
-        cleaned_data = []
         for raw_data in traffic_data_list:
             if raw_data and raw_data['status'] == 'OK':
                 leg = raw_data['routes'][0]['legs'][0]
@@ -26,6 +23,6 @@ class transformTraffic:
                     'end_location_lng': leg['end_location']['lng'],
                     'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 }
-                cleaned_data.append(data)
-
-        return pd.DataFrame(cleaned_data)
+                data['hashId'] = util.create_hashid(f"{leg['start_location']['lat']}_{leg['start_location']['lng']}_{leg['end_location']['lat']}_{leg['end_location']['lng']}")
+                self.cleaned_data.append(data)
+        return pd.DataFrame(self.cleaned_data)
