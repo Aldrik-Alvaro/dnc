@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime
 
 
-class traffic:
+class apiTraffic:
     def __init__(self):
         self.google_api_key = 'google_api_key'
 

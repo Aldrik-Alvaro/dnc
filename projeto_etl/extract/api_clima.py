@@ -3,7 +3,7 @@ import json
 import pandas as pd
 from datetime import datetime
 
-class weather:
+class apiWeather:
     def __init__(self):
         self.weather_api_key = 'weather_api_key'
 
