@@ -22,12 +22,7 @@ pip install python-dotenv
 pip install matplotlib
 ```
 Na raiz do projeto, no arquivo `.env`, altere as variáveis WEATHER_API_KEY e GOOGLE_API_KEY para suas respectivas chaves. Para clima, foi utilizado o serviço  [openweathermap](https://openweathermap.org/api) e para tráfego, a [Google API Directions](https://developers.google.com/maps/documentation/directions/overview?hl=pt-br)
-Por tempo limitado, para facilitar as correções desse projeto, deixarei as chaves listadas abaixo, porém elas serão desativadas de seus respctivos serviços e removidas desse readme após a correção:
-```plaintext
-WEATHER_API_KEY='29c26fe0bde3ac82790313208e42f1fc'
-GOOGLE_API_KEY='AIzaSyCdiGXMlajTJrS13anA-twmUKvY5bYGDEg'
 
-```
 Para iniciar o projeto, execute `main.py`. Ele iniciará o processo de ETL.
 
 Para ver a Visualização de Dados é necessario as dependencias -
