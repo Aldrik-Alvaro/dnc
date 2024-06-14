@@ -84,17 +84,20 @@ class projeto:
                     traffic_data_list.append(traffic_data)
                 else:
                     logging.warning(f'Sem dados retornados para a rota: {origem} -> {destino}')
+
             except Exception as e:
                 logging.error(f'Erro ao consultar a API para a rota {origem} -> {destino}: {e}', exc_info=True)
+
+        # Verificando se o df vazio
+        if not traffic_data_list:
+            logging.error('Nenhum dado de tráfego foi coletado. Processo interrompido.')
+            return
 
         # Transformando os dados
         try:
             logging.info('Iniciando a transformação dos dados de tráfego.')
             df_traffic_data = obj_transformTraffic.clean_traffic_data(traffic_data_list)
-            # Verificando se o df vazio
-            if df_traffic_data.empty:
-                logging.error('Nenhum dado de tráfego foi coletado. Processo interrompido.')
-                return
+
             logging.info('Transformação dos dados concluída.')
         except Exception as e:
             logging.error(f'Erro ao transformar os dados de tráfego: {e}', exc_info=True)
