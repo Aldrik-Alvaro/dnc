@@ -53,10 +53,6 @@ clima_graficos.ipynb
 
 ```
 
-# Projeto ETL para Clima e Tráfego
-
-Este projeto realiza a extração, transformação e carga (ETL) de dados relacionados ao clima e tráfego, utilizando Python.
-
 ## Estrutura do Projeto
 
 - **main.py**: Script principal que inicia o projeto, chamando o `core.py`.
