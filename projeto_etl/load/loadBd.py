@@ -1,7 +1,4 @@
-import pandas as pd
 from pymongo import MongoClient
-import hashlib
-from datetime import datetime
 
 class Load:
     def __init__(self, db_name):
