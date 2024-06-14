@@ -12,7 +12,7 @@ Para executar este projeto, você precisará das seguintes ferramentas:
 - [PyCharm](https://www.jetbrains.com/pt-br/pycharm/): Também é possível visualizar arquivos .ipynb.
 
 ## Funcionamento
-
+https://github.com/Aldrik-Alvaro/dnc/blob/main/trafego_graficos.ipynb
 Para baixar as dependências, abra o arquivo `requirements.txt` no seu IDE PyCharm e clique em `install dependencies`. Ou, execute os seguintes comandos no console:
 ```plaintext
 pip install requests
@@ -29,7 +29,9 @@ Para ver a Visualização de Dados é necessario as dependencias -
 ```plaintext
 pip install jupyter
 ```
-Após a instalação, abra os arquivos .ipynb e execute as células para visualizar os gráficos.
+Após a instalação, abra os arquivos .ipynb e execute as células para visualizar os gráficos ou acesse os links [clima_graficos](https://www.mongodb.com/try/download/community](https://github.com/Aldrik-Alvaro/dnc/blob/main/clima_graficos.ipynb)) / [trafego_graficos](https://github.com/Aldrik-Alvaro/dnc/blob/main/trafego_graficos.ipynb)
+
+
 
 
 ## Estrutura do Projeto
