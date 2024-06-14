@@ -29,7 +29,7 @@ Para ver a Visualização de Dados é necessario as dependencias -
 ```plaintext
 pip install jupyter
 ```
-Após a instalação, abra os arquivos .ipynb e execute as células para visualizar os gráficos ou acesse os links [clima_graficos](https://www.mongodb.com/try/download/community](https://github.com/Aldrik-Alvaro/dnc/blob/main/clima_graficos.ipynb)) / [trafego_graficos](https://github.com/Aldrik-Alvaro/dnc/blob/main/trafego_graficos.ipynb)
+Após a instalação, abra os arquivos .ipynb e execute as células para visualizar os gráficos ou acesse os links [clima_graficos](https://github.com/Aldrik-Alvaro/dnc/blob/main/clima_graficos.ipynb) / [trafego_graficos](https://github.com/Aldrik-Alvaro/dnc/blob/main/trafego_graficos.ipynb)
 
 
 
