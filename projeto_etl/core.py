@@ -51,7 +51,7 @@ class projeto:
             logging.info('Transformação dos dados concluída.')
         except Exception as e:
             logging.error(f'Erro ao transformar os dados do clima: {e}', exc_info=True)
-            raise
+            return
 
         # Salvando os dados no banco
         try:
@@ -60,7 +60,7 @@ class projeto:
             logging.info('Dados salvos no banco com sucesso.')
         except Exception as e:
             logging.error(f'Erro ao salvar os dados no banco: {e}', exc_info=True)
-            raise
+            return
     def trafego(self):
         # Instanciando classes de extração e transformação do tráfego
         obj_apiTraffic = api_trafego.apiTraffic()
@@ -87,19 +87,18 @@ class projeto:
             except Exception as e:
                 logging.error(f'Erro ao consultar a API para a rota {origem} -> {destino}: {e}', exc_info=True)
 
-        # Verificando se a lista de dados de tráfego está vazia ou é None
-        if not traffic_data_list:
-            logging.error('Nenhum dado de tráfego foi coletado. Processo interrompido.')
-            return
-
         # Transformando os dados
         try:
             logging.info('Iniciando a transformação dos dados de tráfego.')
             df_traffic_data = obj_transformTraffic.clean_traffic_data(traffic_data_list)
+            # Verificando se o df vazio
+            if df_traffic_data.empty:
+                logging.error('Nenhum dado de tráfego foi coletado. Processo interrompido.')
+                return
             logging.info('Transformação dos dados concluída.')
         except Exception as e:
             logging.error(f'Erro ao transformar os dados de tráfego: {e}', exc_info=True)
-            raise
+            return
 
         # Salvando os dados no banco
         try:
@@ -108,4 +107,4 @@ class projeto:
             logging.info('Dados salvos no banco com sucesso.')
         except Exception as e:
             logging.error(f'Erro ao salvar os dados no banco: {e}', exc_info=True)
-            raise
+            return

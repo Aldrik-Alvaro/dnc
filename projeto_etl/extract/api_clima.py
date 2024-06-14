@@ -1,8 +1,12 @@
 import requests
+import os
+from dotenv import load_dotenv
+
 
 class apiWeather:
     def __init__(self):
-        self.weather_api_key = 'weather_api_key'
+        load_dotenv()
+        self.weather_api_key = os.getenv('WEATHER_API_KEY')
 
     def get_weather_data(self, cidade):
         url = f'http://api.openweathermap.org/data/2.5/weather?q={cidade}&appid={self.weather_api_key}'
